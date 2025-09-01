@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Generator</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body { display: flex; flex-direction: column; align-items: center; padding: 2rem; }
+  #qrcode { margin: 1rem; }
+  #downloadLink { display: block; margin-top: 1rem; }
+</style>
+</head>
+<body>
+  <h3>QR Code Generator</h3>
+  <input type="text" id="studentId" class="form-control mb-2" placeholder="Enter Student ID">
+  <button id="generateBtn" class="btn btn-primary">Generate QR</button>
+  <div id="qrcode"></div>
+  <a id="downloadLink" download="qr.png" class="btn btn-success">Download QR</a>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+  <script>
+    const qrDiv = document.getElementById("qrcode");
+    const downloadLink = document.getElementById("downloadLink");
+
+    document.getElementById("generateBtn").addEventListener("click", () => {
+      qrDiv.innerHTML = "";
+      const id = document.getElementById("studentId").value.trim();
+      if(!id) return alert("Enter a student ID");
+
+      new QRCode(qrDiv, { text: id, width: 200, height: 200 });
+
+      setTimeout(() => {
+        const canvas = qrDiv.querySelector("canvas");
+        if(canvas) downloadLink.href = canvas.toDataURL();
+      }, 100);
+    });
+  </script>
+</body>
+</html>
