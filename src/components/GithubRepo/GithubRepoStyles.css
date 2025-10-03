@@ -1,0 +1,278 @@
+.repo-parent {
+  background-color: #2d3642;
+  width: 90vh;
+  height: 30vh;
+
+  border-radius: 8px 8px 0 8px;
+  border: 1px solid rgb(66, 62, 62);
+
+  display: flex;
+  flex-direction: column;
+
+  transition-duration: .5s;
+
+}
+
+.above {
+  height: 35%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.repo-icon {
+  fill: #7a807e;
+  margin-left: 3vh;
+  margin-right: 1vh;
+}
+
+.link {
+  font-size: 2vh;
+  margin-bottom: 0.5vh;
+  color: #8bbbff;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.tiret {
+  margin-left: 0.5vh;
+  margin-right: 0.5vh;
+  color: #949494;
+  display: inline;
+}
+
+.div-star {
+  background-color: rgba(0, 0, 0, 0.26);
+  border-radius: 1vh;
+  box-shadow: 0.2vh 0.2vh 0.5vh black;
+
+  width: 13vh;
+  height: 4vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.star-icon {
+  margin-top: 0.2vh;
+  fill: rgb(184, 184, 176);
+}
+
+.p-star {
+  color: rgb(184, 184, 176);
+  margin-left: 0.5vh;
+  user-select: none;
+  font-size: 2vh;
+}
+
+.bottom {
+  border-top: 1px solid rgb(66, 62, 62);
+
+  background-color: rgba(24, 24, 24, 0.5);
+  height: 65%;
+  width: 100%;
+
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.description {
+  color: #a1a7ad;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  text-align: left;
+  font-size: 1.8vh;
+}
+
+.tag-container {
+  margin-left: 2vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -1vh;
+
+  margin-bottom: 1vh;
+}
+
+.tag {
+  margin-left: 0.5vh;
+  margin-right: 0.5vh;
+  margin-top: 1vh;
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+  padding-top: 0.3vh;
+  padding-bottom: 0.4vh;
+
+  background-color: #121d2f;
+  color: #2f81f7;
+  border-radius: 3vh;
+
+  font-size: 1.6vh;
+}
+
+.tag:hover {
+  background-color: #2057a3;
+  color: white;
+  cursor: pointer;
+}
+
+.p-programing-language {
+  font-size: 2vh;
+  overflow: hidden;
+
+  color: rgba(255, 255, 255, 0.555);
+  padding: 0.5vh 2vh 1vh 2vh;
+
+  border-radius: 2vh;
+  margin-right: 2vh;
+
+  background-color: rgba(0, 0, 0, 0.26);
+  border-radius: 1vh;
+  box-shadow: 0.2vh 0.2vh 0.5vh black;
+
+  width: 9vh;
+  height: 2vh;
+}
+
+.right-side {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  margin-right: 2vh;
+}
+
+/* Adaptation pour tel */
+@media (max-width: 781px) {
+
+  .tiret{
+    align-self: center;
+  }
+
+  .above{
+    flex-direction: column;
+    align-items: start;
+    margin-left: 3vh;
+    margin-top: .5vh;
+
+    justify-content: center;
+  }
+
+  .repo-parent{
+    margin-left: -11vh;
+    margin-right: -6.5vh;
+
+    max-width: 44vh;
+    
+    margin-top: -6vh;
+    white-space: nowrap;
+  }
+
+  .description{
+    white-space:normal;
+  }
+
+  .a-repoName{
+    overflow-x: none;
+    text-align: left;
+    max-width: 25vh;
+    overflow-x: auto;
+  }
+
+  .right-side{
+    flex-direction: column;
+    margin-top: -8.5vh;
+    margin-right: 5vh;
+  }
+  .repo-icon{
+    display: none;
+  }
+  .div-star{
+    margin-top: -1.2vh;
+    width: 11vh;
+  }
+  .selected-topics-text{
+    text-align: center;
+  }
+  .p-programing-language{
+    padding-top: 1vh;
+    margin-right: 0;
+    font-size: 1.5vh;
+    width: 7vh;
+  }
+  .p-star{
+    font-size: 1.5vh;
+  }
+  .star-icon{
+    height: 1.5vh;
+    width: 1.5vh;
+  }
+  .show-readme-p{
+    margin-right: 1vh;
+  }
+}
+
+.loading-icon{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 11.5vh;
+  width: 6vh;
+  height: 6vh;
+}
+
+.loading-div{
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1vh;
+}
+
+.bottom-p{
+  width: 12vh;
+  height: 3vh;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+
+  background-color: #161b22;
+  color: #e6edf3;
+
+  cursor: pointer;
+  transition-duration: .3s;
+}
+
+.show-readme-p{
+  border: 3px solid rgb(50, 50, 63);
+  border-bottom: none;
+  border-right: none;
+}
+
+.add-to-favorite-p{
+  right: 12vh;
+  border-radius: 1vh 0 0 0;
+  border: 3px solid rgb(50, 50, 63);
+  border-bottom: none;
+  border-right: none;
+
+}
+.add-to-favorite-p:hover{
+  transform: scale(1.1);
+  right: 12.7vh;
+  bottom: 0.2vh;
+}
+.show-readme-p:hover{
+  transform: scale(1.1);
+  right: 0.7vh;
+  bottom: 0.2vh;
+}
